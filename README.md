@@ -21,3 +21,10 @@ Open http://localhost:3000.
 ## Deploy
 
 Push to GitHub and import the repo on Vercel. No extra settings needed.
+
+## CI/CD
+
+- **Deploys:** Vercel's GitHub integration. Every push to `main` goes live on production; every pull request gets its own preview URL.
+- **Checks:** `.github/workflows/ci.yml` runs on GitHub Actions for every push and pull request to `main`. It installs dependencies and runs `next build`, which also type-checks, so a broken change shows a red ❌ on the commit or PR.
+
+Both are free: Vercel's Hobby plan and GitHub Actions' free minutes cover a personal site comfortably.
