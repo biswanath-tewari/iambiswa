@@ -20,13 +20,33 @@ export default function Site() {
 
   useEffect(() => {
     setTab(fromHash());
-    const onHash = () => {
-      setTab(fromHash());
+    let current = fromHash();
+    const show = (next: Tab) => {
+      if (next === current) return;
+      current = next;
+      setTab(next);
       setAnimate(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
+    const onHash = () => show(fromHash());
+    // Handle in-page tab links directly; some browsers update the URL without firing hashchange.
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = (e.target as Element | null)?.closest?.('a[href^="#"]');
+      const id = a?.getAttribute("href")?.slice(1) as Tab | undefined;
+      if (!id || !TABS.includes(id)) return;
+      e.preventDefault();
+      if (window.location.hash !== `#${id}`) history.pushState(null, "", `#${id}`);
+      show(id);
+    };
     window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    window.addEventListener("popstate", onHash);
+    document.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("hashchange", onHash);
+      window.removeEventListener("popstate", onHash);
+      document.removeEventListener("click", onClick);
+    };
   }, []);
 
   const viewClass = `view${animate ? " enter" : ""}`;
