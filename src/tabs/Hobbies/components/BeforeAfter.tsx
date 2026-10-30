@@ -11,10 +11,10 @@ export default function BeforeAfter() {
   return (
     <div className="ba rv" style={rv(1, { ["--x" as string]: `${x}%` } as CSSProperties)}>
       <div className="side before">
-        <Image src={before} alt="Biswa before his transformation, mirror selfie" placeholder="blur" sizes="(max-width: 820px) 100vw, 520px" />
+        <Image src={before} alt="Biswanath Tewari before his transformation, mirror selfie" placeholder="blur" sizes="(max-width: 820px) 100vw, 520px" />
       </div>
       <div className="side after">
-        <Image src={after} alt="Biswa after his transformation, in a pool" placeholder="blur" sizes="(max-width: 820px) 100vw, 520px" />
+        <Image src={after} alt="Biswanath Tewari after his transformation, in a pool" placeholder="blur" sizes="(max-width: 820px) 100vw, 520px" />
       </div>
       <span className="tagL">Before</span>
       <span className="tagR">After</span>

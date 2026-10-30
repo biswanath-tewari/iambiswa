@@ -7,7 +7,7 @@ import CopyEmail from "./components/CopyEmail";
 export default function Contact() {
   return (
     <div className="links">
-      <Image className="avatar rv" style={rv(0)} src={avatar} alt="Biswa" placeholder="blur" width={112} height={112} />
+      <Image className="avatar rv" style={rv(0)} src={avatar} alt="Biswanath Tewari" placeholder="blur" width={112} height={112} />
       <h1 className="rv" style={rv(1)}>Let&apos;s connect</h1>
       <p className="rv" style={rv(2)}>Work, collabs, gym talk or travel tips. Pick a place.</p>
       <div className="lt">

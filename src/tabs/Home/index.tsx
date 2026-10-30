@@ -12,7 +12,7 @@ export default function Home() {
         <div>
           <div className="status rv" style={rv(0)}>
             <i />
-            AVP at Kotak Mahindra Bank · Bengaluru
+            AVP at Kotak Mahindra Bank · Kotak811 · Bengaluru
           </div>
           <h1 className="rv" style={rv(1)}>
             Hi, I&apos;m Biswa.
@@ -24,8 +24,9 @@ export default function Home() {
             </span>
           </h1>
           <p className="lede rv" style={rv(2)}>
-            I&apos;m a software developer with 5+ years in the React ecosystem, building mobile and web apps and using AI to
-            ship them fast. Away from the keyboard I&apos;m deep into fitness and the research behind it, and I&apos;m
+            I&apos;m Biswanath Tewari, a React Native and mobile app developer in Bengaluru with 5+ years in the React
+            ecosystem. At Kotak Mahindra Bank I build Kotak811 and own its Fixed Deposit module, and I use AI to ship mobile
+            and web apps fast. Away from the keyboard I&apos;m deep into fitness and the research behind it, and I&apos;m
             usually planning the next trip.
           </p>
           <div className="ctas rv" style={rv(3)}>
@@ -38,7 +39,7 @@ export default function Home() {
           <figure className="photo">
             <Image
               src={hero}
-              alt="Biswa at night by a lake, with a glowing Love Passion Karma sign behind him"
+              alt="Biswanath Tewari (Biswa) at night by a lake, with a glowing Love Passion Karma sign behind him"
               placeholder="blur"
               priority
               sizes="(max-width: 820px) 280px, 340px"

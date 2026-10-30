@@ -282,6 +282,7 @@ section + section {
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
+.head h1,
 .head h2 {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 800;

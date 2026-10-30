@@ -39,7 +39,7 @@ export default function Site({ children }: { children: React.ReactNode }) {
       <main className="wrap">{children}</main>
 
       <footer className="site">
-        <div className="wrap">Designed &amp; built by Biswa · Bengaluru</div>
+        <div className="wrap">Designed &amp; built by Biswanath Tewari · Bengaluru</div>
       </footer>
 
       <div className="bottom">

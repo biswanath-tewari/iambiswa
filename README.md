@@ -70,3 +70,11 @@ Push to GitHub and import the repo on Vercel. No extra settings needed.
 - **Checks:** `.github/workflows/ci.yml` runs on GitHub Actions for every push and pull request to `main`. It installs dependencies and runs `next build`, which also type-checks, so a broken change shows a red ❌ on the commit or PR.
 
 Both are free: Vercel's Hobby plan and GitHub Actions' free minutes cover a personal site comfortably.
+
+## SEO
+
+- `lib/site.ts` – canonical URL (`https://iambiswa.in`), name variants, keywords and shared social-card fields.
+- `lib/jsonld.tsx` – schema.org `Person` + `WebSite` data (rendered in the root layout) and a `ProfilePage` entry per page, so Google can connect the site to Biswanath Tewari's LinkedIn, GitHub, X and Instagram.
+- `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` – generate `/sitemap.xml`, `/robots.txt` and the web app manifest.
+- Each page sets its own title, description and canonical URL (`app/page.tsx`, `app/[tab]/page.tsx`).
+- To verify Google Search Console with the HTML-tag method, set `GOOGLE_SITE_VERIFICATION` in Vercel's environment variables. DNS verification needs no code.

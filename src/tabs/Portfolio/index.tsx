@@ -9,8 +9,8 @@ export default function Portfolio() {
       <section>
         <div className="head rv" style={rv(0)}>
           <div>
-            <span className="label">Career</span>
-            <h2>Experience</h2>
+            <span className="label">Biswanath Tewari · Career</span>
+            <h1>Experience</h1>
           </div>
           <span className="chip">5+ years · Bengaluru</span>
         </div>

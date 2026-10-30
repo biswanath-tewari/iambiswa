@@ -10,7 +10,7 @@ export default function Hobbies() {
         <div className="head rv" style={rv(0)}>
           <div>
             <span className="label" style={{ color: "var(--pulse)" }}>The highlight</span>
-            <h2>Fitness lab</h2>
+            <h1>Fitness lab</h1>
           </div>
         </div>
         <div className="lab">

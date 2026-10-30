@@ -104,7 +104,7 @@ export type Shot = { img: StaticImageData; alt: string; caption: string };
 export const shots: Shot[] = [
   { img: sergeyLinkedin, alt: "LinkedIn recommendation from Sergey Morkovkin", caption: "LinkedIn · Sergey Morkovkin" },
   { img: saurabhLinkedin, alt: "LinkedIn recommendation from Saurabh Sahu", caption: "LinkedIn · Saurabh Sahu" },
-  { img: milaapSendoff, alt: "Slack shout-out about the Milaap team's send-off for Biswa", caption: "Slack · Milaap send-off" },
+  { img: milaapSendoff, alt: "Slack shout-out about the Milaap team's send-off for Biswanath Tewari", caption: "Slack · Milaap send-off" },
   { img: metrogharComplete, alt: "Slack announcement that Metroghar was completed with zero bugs, with client email", caption: "Slack · Metroghar delivered" },
   { img: gluestackShoutout, alt: "Slack shout-out for using gluestack-ui alpha on Metroghar", caption: "Slack · gluestack-ui shout-out" },
   { img: kudosYashraj, alt: "Kudos from Yashraj Anand for team leadership", caption: "Kudos · team lead" },
@@ -144,10 +144,10 @@ export const dailyStack = [
 ];
 
 export const hobbies = [
-  { img: kenya, alt: "Biswa beside a small safari plane on an airstrip in the Masai Mara, Kenya", icon: "✈", title: "Vacations", text: "Latest: a Kenya trip with friends, with game drives in the Masai Mara." },
-  { img: bike, alt: "Biswa's motorcycle parked on a country road outside Bengaluru under a stormy sky", icon: "◎", title: "Bike", text: "Weekend rides out of Bengaluru on my Harley, chasing empty roads and moody skies." },
+  { img: kenya, alt: "Biswanath Tewari beside a small safari plane on an airstrip in the Masai Mara, Kenya", icon: "✈", title: "Vacations", text: "Latest: a Kenya trip with friends, with game drives in the Masai Mara." },
+  { img: bike, alt: "Biswanath Tewari's motorcycle parked on a country road outside Bengaluru under a stormy sky", icon: "◎", title: "Bike", text: "Weekend rides out of Bengaluru on my Harley, chasing empty roads and moody skies." },
   { img: badminton, alt: "A yellow shuttlecock resting on a badminton racket on an indoor court", icon: "⟋", title: "Badminton", text: "Fast games, quick reflexes, good cardio." },
-  { img: swim, alt: "Biswa in an outdoor pool, arms out, splashing water", icon: "≈", title: "Swimming", text: "Low-impact conditioning and recovery days." },
+  { img: swim, alt: "Biswanath Tewari in an outdoor pool, arms out, splashing water", icon: "≈", title: "Swimming", text: "Low-impact conditioning and recovery days." },
 ];
 
 export const links = [
