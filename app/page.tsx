@@ -1,5 +1,10 @@
-import Site from "@/components/Site";
+import Home from "@/components/Home";
+import { View } from "@/components/Site";
 
 export default function Page() {
-  return <Site />;
+  return (
+    <View>
+      <Home />
+    </View>
+  );
 }

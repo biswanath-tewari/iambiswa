@@ -1,63 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import TabBar, { type Tab } from "./TabBar";
-import Home from "./Home";
-import Portfolio from "./Portfolio";
-import Hobbies from "./Hobbies";
-import Contact from "./Contact";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useLayoutEffect, useState } from "react";
+import TabBar, { TABS, tabFromPath, tabHref, type Tab } from "./TabBar";
 
-const TABS: Tab[] = ["home", "portfolio", "hobbies", "contact"];
+/** Header, tab bars and footer. Lives in the root layout so it persists across tab pages. */
+export default function Site({ children }: { children: React.ReactNode }) {
+  const tab = tabFromPath(usePathname());
+  const router = useRouter();
 
-function fromHash(): Tab {
-  const h = window.location.hash.slice(1) as Tab;
-  return TABS.includes(h) ? h : "home";
-}
-
-export default function Site() {
-  const [tab, setTab] = useState<Tab>("home");
-  const [animate, setAnimate] = useState(false);
-
+  // Old links used #hash routing (/#portfolio); send them to the real page.
   useEffect(() => {
-    setTab(fromHash());
-    let current = fromHash();
-    const show = (next: Tab) => {
-      if (next === current) return;
-      current = next;
-      setTab(next);
-      setAnimate(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-    const onHash = () => show(fromHash());
-    // Handle in-page tab links directly; some browsers update the URL without firing hashchange.
-    const onClick = (e: MouseEvent) => {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      const a = (e.target as Element | null)?.closest?.('a[href^="#"]');
-      const id = a?.getAttribute("href")?.slice(1) as Tab | undefined;
-      if (!id || !TABS.includes(id)) return;
-      e.preventDefault();
-      if (window.location.hash !== `#${id}`) history.pushState(null, "", `#${id}`);
-      show(id);
-    };
-    window.addEventListener("hashchange", onHash);
-    window.addEventListener("popstate", onHash);
-    document.addEventListener("click", onClick);
-    return () => {
-      window.removeEventListener("hashchange", onHash);
-      window.removeEventListener("popstate", onHash);
-      document.removeEventListener("click", onClick);
-    };
-  }, []);
-
-  const viewClass = `view${animate ? " enter" : ""}`;
+    const h = window.location.hash.slice(1) as Tab;
+    if (TABS.includes(h)) router.replace(tabHref(h), { scroll: false });
+  }, [router]);
 
   return (
     <>
       <header className="top">
         <div className="wrap">
-          <a className="logo" href="#home">
+          <Link className="logo" href="/" scroll={false}>
             Biswanath <span>Tewari</span>
-          </a>
+          </Link>
           <TabBar
             ariaLabel="Sections"
             active={tab}
@@ -71,14 +36,7 @@ export default function Site() {
         </div>
       </header>
 
-      <main className="wrap">
-        <div key={tab} className={viewClass}>
-          {tab === "home" && <Home />}
-          {tab === "portfolio" && <Portfolio />}
-          {tab === "hobbies" && <Hobbies />}
-          {tab === "contact" && <Contact />}
-        </div>
-      </main>
+      <main className="wrap">{children}</main>
 
       <footer className="site">
         <div className="wrap">Designed &amp; built by Biswa · Bengaluru</div>
@@ -98,4 +56,18 @@ export default function Site() {
       </div>
     </>
   );
+}
+
+let navigated = false;
+
+/** Wraps one tab's content. Animates in and jumps to the top on every tab switch, but not on first load. */
+export function View({ children }: { children: React.ReactNode }) {
+  const [animate] = useState(() => navigated);
+
+  useLayoutEffect(() => {
+    if (animate) window.scrollTo({ top: 0, behavior: "instant" });
+    navigated = true;
+  }, [animate]);
+
+  return <div className={`view${animate ? " enter" : ""}`}>{children}</div>;
 }

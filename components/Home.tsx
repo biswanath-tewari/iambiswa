@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import hero from "@/assets/biswa-hero.webp";
 import { rv } from "@/lib/rv";
 
@@ -28,8 +29,8 @@ export default function Home() {
             usually planning the next trip.
           </p>
           <div className="ctas rv" style={rv(3)}>
-            <a className="btn primary" href="#portfolio">See my work</a>
-            <a className="btn" href="#hobbies">Life outside code</a>
+            <Link className="btn primary" href="/portfolio" scroll={false}>See my work</Link>
+            <Link className="btn" href="/hobbies" scroll={false}>Life outside code</Link>
           </div>
         </div>
         <div className="portrait rv" style={rv(2)}>

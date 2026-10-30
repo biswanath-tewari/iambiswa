@@ -4,7 +4,7 @@ html{color-scheme:light;-webkit-text-size-adjust:100%}
 body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
-/* Layout: four hash-routed tabs (Home, Portfolio, Hobbies, Contact). Top nav on desktop, bottom tab bar on phones. Cobalt = work, coral = body/fitness. */
+/* Layout: four tab pages (/, /portfolio, /hobbies, /contact) (Home, Portfolio, Hobbies, Contact). Top nav on desktop, bottom tab bar on phones. Cobalt = work, coral = body/fitness. */
 :root{
   --bg:#EEF1F6; --surface:#FFFFFF; --ink:#111827; --muted:#5B6578; --line:#D6DCE6;
   --accent:#2747F5; --accent-ink:#FFFFFF; --pulse:#E5484D; --ok:#13834F; --ship:#B86E00;
@@ -161,8 +161,8 @@ section + section{margin-top:64px}
 .shots::-webkit-scrollbar{display:none}
 .shot{flex:0 0 min(560px,82vw);scroll-snap-align:start;display:grid;grid-template-rows:auto 1fr;padding:10px;border:1px solid var(--line);border-radius:16px;background:var(--surface);cursor:zoom-in;text-align:left;transition:transform .35s var(--ease),box-shadow .35s var(--ease),opacity .35s}
 .shot:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px var(--accent)}
-.shot .frame{padding:0;height:clamp(220px,40vw,360px);border-radius:10px;background:color-mix(in srgb,var(--ink) 6%,var(--bg));display:grid;place-items:center;overflow:hidden}
-.shot img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.shot .frame{padding:0;height:clamp(220px,40vw,360px);border-radius:10px;background:color-mix(in srgb,var(--ink) 6%,var(--bg));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shot img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
 .shot span{display:block;font:500 12px/1.4 var(--f-mono);color:var(--muted);padding:10px 4px 2px}
 .carbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
 .dots{display:flex;gap:6px;flex-wrap:wrap}
@@ -259,6 +259,13 @@ footer.site{padding-block:24px 40px;color:var(--muted);font:13px/1.5 var(--f-mon
   .bottom .tabs a{display:grid;justify-items:center;gap:4px;padding:8px 4px;border-radius:14px;font-size:11px}
   .bottom .tabs .ind{border-radius:14px}
   .bottom .tabs .ic{display:block;font-size:18px;line-height:1}
+}
+@media (max-width:700px){
+  .lb{padding-inline:8px;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .lb img{width:100%;max-width:100%;max-height:100%;object-fit:contain}
+  .lb .nav{top:auto;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:none}
+  .lb .nav.p{left:calc(50% - 56px);right:auto}
+  .lb .nav.n{left:calc(50% + 12px);right:auto;top:auto}
 }
 @media (min-width:821px){.bottom{display:none}}
 @media (max-width:520px){

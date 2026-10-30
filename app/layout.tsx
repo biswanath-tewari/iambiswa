@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import Site from "@/components/Site";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -24,7 +25,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Biswanath Tewari",
+  metadataBase: new URL("https://www.iambiswa.in"),
+  title: { default: "Biswanath Tewari", template: "%s · Biswanath Tewari" },
   description:
     "React Native and web developer in Bengaluru. AVP at Kotak Mahindra Bank, building Kotak811. Fitness nerd, rider and traveller.",
   openGraph: {
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
     description: "React Native and web developer in Bengaluru who ships fast.",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
@@ -47,7 +50,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Site>{children}</Site>
+      </body>
     </html>
   );
 }

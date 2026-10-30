@@ -1,8 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 
-export type Tab = "home" | "portfolio" | "hobbies" | "contact";
+export const TABS = ["home", "portfolio", "hobbies", "contact"] as const;
+export type Tab = (typeof TABS)[number];
+
+export const tabHref = (id: Tab) => (id === "home" ? "/" : `/${id}`);
+
+export function tabFromPath(path: string): Tab {
+  const id = path.split("/")[1] as Tab;
+  return TABS.includes(id) ? id : "home";
+}
 
 type Item = { id: Tab; label: string; icon?: string };
 
@@ -42,10 +51,15 @@ export default function TabBar({
     <nav ref={ref} className={className} aria-label={ariaLabel}>
       <span ref={ind} className="ind" />
       {items.map((it) => (
-        <a key={it.id} href={`#${it.id}`} aria-current={active === it.id ? "page" : undefined}>
+        <Link
+          key={it.id}
+          href={tabHref(it.id)}
+          scroll={false}
+          aria-current={active === it.id ? "page" : undefined}
+        >
           {it.icon && <span className="ic">{it.icon}</span>}
           {it.label}
-        </a>
+        </Link>
       ))}
     </nav>
   );
