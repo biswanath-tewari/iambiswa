@@ -1,7 +1,7 @@
 import { experience, quotes } from "@/lib/data";
 import { rv } from "@/lib/rv";
-import Projects from "./Projects";
-import ShotsCarousel from "./ShotsCarousel";
+import Projects from "./components/Projects";
+import ShotsCarousel from "./components/ShotsCarousel";
 
 export default function Portfolio() {
   return (

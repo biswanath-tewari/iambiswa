@@ -1,6 +1,6 @@
 import Image from "next/image";
-import healthcare from "@/assets/healthcare.webp";
-import milaap from "@/assets/milaap.webp";
+import healthcare from "@/src/assets/healthcare.webp";
+import milaap from "@/src/assets/milaap.webp";
 import { rv } from "@/lib/rv";
 
 export default function Projects() {

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
-import Site from "@/components/Site";
+import Site from "@/src/components/Site";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({

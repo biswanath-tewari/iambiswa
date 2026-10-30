@@ -1,18 +1,18 @@
 import type { StaticImageData } from "next/image";
 
-import sergeyLinkedin from "@/assets/shots/sergey-linkedin.webp";
-import saurabhLinkedin from "@/assets/shots/saurabh-linkedin.webp";
-import milaapSendoff from "@/assets/shots/milaap-sendoff.webp";
-import metrogharComplete from "@/assets/shots/metroghar-complete.webp";
-import gluestackShoutout from "@/assets/shots/gluestack-shoutout.webp";
-import kudosYashraj from "@/assets/shots/kudos-yashraj.webp";
-import kudosSarulatha from "@/assets/shots/kudos-sarulatha.webp";
-import kudosPokerboss from "@/assets/shots/kudos-pokerboss.webp";
-import sergeyCake from "@/assets/shots/sergey-cake.webp";
-import kenya from "@/assets/kenya.webp";
-import bike from "@/assets/bike.webp";
-import badminton from "@/assets/badminton.webp";
-import swim from "@/assets/swim.webp";
+import sergeyLinkedin from "@/src/assets/shots/sergey-linkedin.webp";
+import saurabhLinkedin from "@/src/assets/shots/saurabh-linkedin.webp";
+import milaapSendoff from "@/src/assets/shots/milaap-sendoff.webp";
+import metrogharComplete from "@/src/assets/shots/metroghar-complete.webp";
+import gluestackShoutout from "@/src/assets/shots/gluestack-shoutout.webp";
+import kudosYashraj from "@/src/assets/shots/kudos-yashraj.webp";
+import kudosSarulatha from "@/src/assets/shots/kudos-sarulatha.webp";
+import kudosPokerboss from "@/src/assets/shots/kudos-pokerboss.webp";
+import sergeyCake from "@/src/assets/shots/sergey-cake.webp";
+import kenya from "@/src/assets/kenya.webp";
+import bike from "@/src/assets/bike.webp";
+import badminton from "@/src/assets/badminton.webp";
+import swim from "@/src/assets/swim.webp";
 
 export const EMAIL = "iambiswanathtewari@gmail.com";
 

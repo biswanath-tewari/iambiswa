@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState, type CSSProperties } from "react";
-import before from "@/assets/before.webp";
-import after from "@/assets/after.webp";
+import before from "@/src/assets/before.webp";
+import after from "@/src/assets/after.webp";
 import { rv } from "@/lib/rv";
 
 export default function BeforeAfter() {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { dailyStack, hobbies, researchNotes } from "@/lib/data";
 import { rv } from "@/lib/rv";
-import BeforeAfter from "./BeforeAfter";
+import BeforeAfter from "./components/BeforeAfter";
 
 export default function Hobbies() {
   return (

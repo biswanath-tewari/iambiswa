@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "@/assets/biswa-hero.webp";
+import hero from "@/src/assets/biswa-hero.webp";
 import { rv } from "@/lib/rv";
 
 const ticker = ["React Native", "Strength training", "Next.js", "Badminton", "Masai Mara", "Swimming", "AI builds", "Long rides"];

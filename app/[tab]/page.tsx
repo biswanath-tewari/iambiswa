@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Contact from "@/components/Contact";
-import Hobbies from "@/components/Hobbies";
-import Portfolio from "@/components/Portfolio";
-import { View } from "@/components/Site";
+import Contact from "@/src/tabs/Contact";
+import Hobbies from "@/src/tabs/Hobbies";
+import Portfolio from "@/src/tabs/Portfolio";
+import { View } from "@/src/components/Site";
 
 const pages = {
   portfolio: { title: "Portfolio", Content: Portfolio },

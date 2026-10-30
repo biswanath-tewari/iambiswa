@@ -1,8 +1,8 @@
 import Image from "next/image";
-import avatar from "@/assets/avatar.webp";
+import avatar from "@/src/assets/avatar.webp";
 import { links } from "@/lib/data";
 import { rv } from "@/lib/rv";
-import CopyEmail from "./CopyEmail";
+import CopyEmail from "./components/CopyEmail";
 
 export default function Contact() {
   return (
