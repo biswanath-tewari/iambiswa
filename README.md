@@ -73,7 +73,7 @@ Both are free: Vercel's Hobby plan and GitHub Actions' free minutes cover a pers
 
 ## SEO
 
-- `lib/site.ts` – canonical URL (`https://iambiswa.in`), name variants, keywords and shared social-card fields.
+- `lib/site.ts` – canonical URL (`https://www.iambiswa.in`), name variants, keywords and shared social-card fields.
 - `lib/jsonld.tsx` – schema.org `Person` + `WebSite` data (rendered in the root layout) and a `ProfilePage` entry per page, so Google can connect the site to Biswanath Tewari's LinkedIn, GitHub, X and Instagram.
 - `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` – generate `/sitemap.xml`, `/robots.txt` and the web app manifest.
 - Each page sets its own title, description and canonical URL (`app/page.tsx`, `app/[tab]/page.tsx`).

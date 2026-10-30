@@ -1,7 +1,7 @@
 import { EMAIL, links } from "./data";
 
-/** Canonical origin. Keep in sync with the primary domain in Vercel (www should redirect here). */
-export const SITE_URL = "https://iambiswa.in";
+/** Canonical origin. Keep in sync with the primary domain in Vercel (the bare domain redirects here). */
+export const SITE_URL = "https://www.iambiswa.in";
 
 export const PERSON = {
   name: "Biswanath Tewari",
