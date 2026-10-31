@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Site from "@/src/components/Site";
 import { JsonLd, siteGraph } from "@/lib/jsonld";
 import { KEYWORDS, PERSON, SITE_URL } from "@/lib/site";
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <JsonLd data={siteGraph} />
         <Site>{children}</Site>
+        <Analytics />
       </body>
     </html>
   );
